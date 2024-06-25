@@ -1,2 +1,35 @@
 # PINN_turbulent_jet
-PINN for data assimilation for axisymmetric turbulent jet using temperature fields
+PINN for data assimilation for axisymmetric turbulent jet using temperature fields. 
+
+
+Continuity equation:
+
+$$\frac{1}{r}\frac{\partial (r\rho v_{r})}{\partial r} + \frac{\partial \rho v_{z}}{\partial z}=0$$
+
+R-component equation:
+
+
+$$\rho\left[ v_r \frac{\partial v_r}{\partial r} + v_z \frac{\partial v_r}{\partial z} \right] = - \frac{\partial p}{\partial r} +\frac{\tilde{\mu_0}}{Re_0} \frac{\partial}{\partial r} \left[\mu \left( -\frac{2}{3} \nabla v + 2\frac{\partial v_r}{\partial r} \right)\right] + \frac{\tilde{\mu_0}}{Re_0}\frac{\partial}{\partial z} \left[\mu\left( \frac{\partial v_r}{\partial z} +\frac{\partial v_z}{\partial r}\right)\right] + \frac{2\tilde{\mu_0}}{Re_0}\frac{\mu}{r}\left[\frac{\partial v_r}{\partial r} - \frac{v_r}{r} \right]$$
+
+Z-component equation:
+
+$$\rho\left[ v_r \frac{\partial v_z}{\partial r} + v_z \frac{\partial v_z}{\partial z} \right] = - \frac{\partial p}{\partial z} +\frac{\tilde{\mu_0}}{Re_0} \frac{\partial}{\partial z} \left[\mu \left( -\frac{2}{3} \nabla v + 2\frac{\partial v_z}{\partial z} \right)\right] + \frac{\tilde{\mu_0}}{Re_0}\frac{\partial}{\partial r} \left[\mu\left( \frac{\partial v_z}{\partial r} +\frac{\partial v_r}{\partial z}\right)\right] + \frac{\tilde{\mu_0}}{Re_0}\frac{\mu}{r}\left[\frac{\partial v_r}{\partial z} + \frac{\partial v_z}{\partial r} \right]$$
+
+Energy equation:
+$$\rho\left[ v_r \frac{\partial T}{\partial r} + v_z \frac{\partial T}{\partial z} \right] = \frac{1}{Pe_0} \frac{1}{r}\frac{\partial }{\partial r} \left (\lambda r \frac{\partial T}{\partial r} \right) + \frac{1}{Pe_0} \frac{\partial }{\partial z} \left (\lambda \frac{\partial T}{\partial z} \right)$$
+
+where:
+$$\nabla v = \frac{1}{r}\frac{\partial}{\partial r}\left(r v_r \right) + \frac{\partial v_z}{\partial z}$$ 
+$$\rho = \frac{\rho_{dim}}{\rho_0}$$
+$$\rho_{dim} = \frac{p_0 M}{R(T+T_0+273.15)}$$
+$$\rho_0 = \frac{p_0 M}{R(T_0+273.15)}$$
+$$\lambda = 1 + \frac{C_p}{Pr_t} \frac{\mu_{mol}}{\lambda_{mol}} \left( \mu - 1 \right)$$
+$$Re = \frac{\rho_0 v_0 l}{\mu_{mol}}, Pe = \frac{\rho_0 C_p v_0 l}{\lambda_{mol}}$$
+Normalization:
+$$r, z : l$$
+$$v_r, v_z : v_0$$
+$$p : \rho_0 v_0^{2}$$
+$$T : T_{norm}$$
+$$\mu : \mu_{mol}$$
+$$\tilde{\mu_0} = const \ (>= max \ \mu \ from \ all \ experiments)$$
+Also the replacement $v_r=ar$ were made to avoid big residuals due to the memebers proportional $\frac{1}{r}$.
