@@ -1,6 +1,6 @@
 # PINN_turbulent_jet
 PINN for data assimilation for axisymmetric turbulent jet using temperature fields. 
-
+![alt text](https://github.com/YulieRu/PINN_turbulent_jet/blob/7f5ceb3dca788ba5b68e9714223ac9ececd9f29b/scheme.svg)
 
 Continuity equation:
 
