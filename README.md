@@ -5,24 +5,26 @@ The data assimilation technique for turbulent flows with PINN is proposed, which
 
 A notebook with example for one experimental series is availiable [here](/PINN_notebook/PINN_turbulent_jet.ipynb).
 
-Illustration of full-connected neural network:
+*Illustration of full-connected neural network*:
 
 ![alt text](https://github.com/YulieRu/PINN_turbulent_jet/blob/7f5ceb3dca788ba5b68e9714223ac9ececd9f29b/scheme.svg)
 
-Continuity equation:
+Equations in the approximation of a weakly compressible medium are used: 
+
+**Continuity equation:**
 
 $$\frac{1}{r}\frac{\partial (r\rho v_{r})}{\partial r} + \frac{\partial \rho v_{z}}{\partial z}=0$$
 
-R-component equation:
+**R-component equation:**
 
 
 $$\rho\left[ v_r \frac{\partial v_r}{\partial r} + v_z \frac{\partial v_r}{\partial z} \right] = - \frac{\partial p}{\partial r} +\frac{\tilde{\mu_0}}{Re_0} \frac{\partial}{\partial r} \left[\mu \left( -\frac{2}{3} \nabla v + 2\frac{\partial v_r}{\partial r} \right)\right] + \frac{\tilde{\mu_0}}{Re_0}\frac{\partial}{\partial z} \left[\mu\left( \frac{\partial v_r}{\partial z} +\frac{\partial v_z}{\partial r}\right)\right] + \frac{2\tilde{\mu_0}}{Re_0}\frac{\mu}{r}\left[\frac{\partial v_r}{\partial r} - \frac{v_r}{r} \right]$$
 
-Z-component equation:
+**Z-component equation:**
 
 $$\rho\left[ v_r \frac{\partial v_z}{\partial r} + v_z \frac{\partial v_z}{\partial z} \right] = - \frac{\partial p}{\partial z} +\frac{\tilde{\mu_0}}{Re_0} \frac{\partial}{\partial z} \left[\mu \left( -\frac{2}{3} \nabla v + 2\frac{\partial v_z}{\partial z} \right)\right] + \frac{\tilde{\mu_0}}{Re_0}\frac{\partial}{\partial r} \left[\mu\left( \frac{\partial v_z}{\partial r} +\frac{\partial v_r}{\partial z}\right)\right] + \frac{\tilde{\mu_0}}{Re_0}\frac{\mu}{r}\left[\frac{\partial v_r}{\partial z} + \frac{\partial v_z}{\partial r} \right]$$
 
-Energy equation:
+**Energy equation:**
 $$\rho\left[ v_r \frac{\partial T}{\partial r} + v_z \frac{\partial T}{\partial z} \right] = \frac{1}{Pe_0} \frac{1}{r}\frac{\partial }{\partial r} \left (\lambda r \frac{\partial T}{\partial r} \right) + \frac{1}{Pe_0} \frac{\partial }{\partial z} \left (\lambda \frac{\partial T}{\partial z} \right)$$
 
 where:
