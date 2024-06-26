@@ -7,6 +7,8 @@ A notebook with example for one experimental series is availiable [here](/PINN_n
 
 Besides, simple autoencoder (simpleAE) has been trained using numerical fields from simulation of turbulent jet with the modified Spalart–Allmaras model. Then physics loss (that is equaitions residuals) were included in loss-function, but the predictions were spoilt. So it was shown that numerical derivatives and autioencoder didn't work for data assimilation in this case. A notebook is availiable [here](simpleAE/simpleAE_numerical_derivatives.ipynb).
 
+As the raw experimental data are the displacement fields (not temperature fields) the [Denoising autoencoder](https://github.com/GuFeng-95/Denoising-Autoencoder) is used for filtering displacement fields obtained in BOS experiment. Filtered fields can be then used for processing to obtain more smooth temperature fields. A notebook is availiable [here](DAE/DAE_filtering_displacement_fields_training.ipynb).
+
 *Illustration of full-connected neural network*:
 
 ![alt text](https://github.com/YulieRu/PINN_turbulent_jet/blob/7f5ceb3dca788ba5b68e9714223ac9ececd9f29b/scheme.svg)
