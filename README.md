@@ -1,5 +1,10 @@
 # PINN_turbulent_jet
-PINN for data assimilation for axisymmetric turbulent jet using temperature fields. 
+**PINN for data assimilation for axisymmetric turbulent jet using temperature fields.** 
+
+The data assimilation technique for turbulent flows with PINN is proposed, which allows determination of the turbulent viscosity, velocity and pressure distributions from the experimentally measured or synthetic temperature fields. There is an example with measurements are performed for a round jet of hot air using nonintrusive Background Oriented Schlieren (BOS) technique. Experimental data and fields from similar simulations using Spalart–Allmaras and $k-ε$ turbulence models are availiable for downloading by links in /experimental_BOS_temperature_fields/Links.
+
+Illustration of full-connected neural network:
+
 ![alt text](https://github.com/YulieRu/PINN_turbulent_jet/blob/7f5ceb3dca788ba5b68e9714223ac9ececd9f29b/scheme.svg)
 
 Continuity equation:
