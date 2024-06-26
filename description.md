@@ -1,1 +1,0 @@
-[Denoising autoencoder](https://github.com/GuFeng-95/Denoising-Autoencoder) is used for filtering displacement fields obtained in BOS experiment. Filtered fields can be then used for processing to obtain more smooth temperature fields.
